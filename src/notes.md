@@ -1,0 +1,1 @@
+curl -H "Content-Type:application/json"  -X POST -d  '{ "user":"admin@dotcms.com", "password":"admin", "expirationDays": 10 }' https://demo.dotcms.com/api/v1/authentication/api-token
