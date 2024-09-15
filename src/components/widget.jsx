@@ -4,13 +4,18 @@ import React from 'react';
 import { Flex, View } from '@adobe/react-spectrum';
 import { ImageComponent } from './image';
 
-const VtlInclude = (props) => {
+const Widget = (props) => {
   console.log('Widget', props?.widgetCodeJSON?.posts);
 
   return (
-    <>
+    <Flex
+      direction="column"
+      gap="size-100"
+      alignContent="center"
+      alignItems="center"
+    >
       <h2>{props.title}</h2>
-      <Flex direction="row" gap="size-100" wrap>
+      <Flex direction="row" gap="size-100" wrap justifyContent={'center'}>
         {props.widgetCodeJSON?.posts?.map((post) => {
           return (
             <View
@@ -20,7 +25,7 @@ const VtlInclude = (props) => {
               height="size-4000"
               overflow="hidden"
             >
-              <Flex direction="column" alignItems="center">
+              <Flex direction="column">
                 <h4>{post.title}</h4>
                 {post.image && (
                   <ImageComponent
@@ -36,8 +41,8 @@ const VtlInclude = (props) => {
           );
         })}
       </Flex>
-    </>
+    </Flex>
   );
 };
 
-export { VtlInclude };
+export { Widget };

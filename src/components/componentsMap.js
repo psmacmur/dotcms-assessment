@@ -1,7 +1,7 @@
 import { Banner } from './banner';
 import { WebPageContent } from './webpagecontent';
 import { Product } from './product';
-import { VtlInclude } from './widget';
+import { Widget } from './widget';
 import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';
@@ -18,7 +18,7 @@ const componentsMap = {
     //   CallToAction: CallToAction,
     //   CustomNoComponent: CustomNoComponent,
     BlockEditorItem: BlogWithBlockEditor,
-    VtlInclude: VtlInclude,
+    VtlInclude: Widget,
   };
 
   export {componentsMap};
