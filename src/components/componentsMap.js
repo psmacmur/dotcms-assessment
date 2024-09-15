@@ -1,7 +1,7 @@
 import { Banner } from './banner';
 import { WebPageContent } from './webpagecontent';
 import { Product } from './product';
-import { VtlInclude } from './vtlinclude';
+import { VtlInclude } from './widget';
 import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';

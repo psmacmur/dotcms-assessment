@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Image } from '@adobe/react-spectrum';
+
 const Banner = ({ title, caption, image, link, buttonText }) => {
   console.log('Banner', title, caption, image, link, buttonText);
   return (

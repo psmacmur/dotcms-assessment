@@ -6,6 +6,7 @@ import { Image, Link } from '@adobe/react-spectrum';
 const Activity = ({ title, description, image, urlTitle }) => {
   return (
     <article className="p-4 overflow-hidden bg-white rounded shadow-lg">
+      Activity
       {image && (
         <Image
           src={image?.idPath ?? image}

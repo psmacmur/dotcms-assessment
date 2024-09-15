@@ -8,7 +8,9 @@ import { withExperiments } from '@dotcms/experiments';
 
 const experimentConfig = {
   apiKey: null, // not working atm import.meta.env.VITE_PUBLIC_EXPERIMENTS_API_KEY, // API key for experiments, should be securely stored
+  // @ts-ignore
   server: import.meta.env.VITE_PUBLIC_DOTCMS_HOST, // DotCMS server endpoint
+  // @ts-ignore
   debug: import.meta.env.VITE_PUBLIC_EXPERIMENTS_DEBUG, // Debug mode for additional logging
 };
 
