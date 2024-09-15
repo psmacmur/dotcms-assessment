@@ -12,6 +12,7 @@
   "dependencies": {
     "@adobe/react-spectrum": "^3.36.3",
     "@apollo/client": "^3.11.8",
+    "@dotcms/experiments": "^0.0.1-alpha.37",
     "@dotcms/react": "^0.0.1-alpha.37",
     "graphql": "^16.9.0",
     "react": "^18.3.1",
