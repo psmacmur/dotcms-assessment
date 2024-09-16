@@ -31,7 +31,7 @@ const Page = ({ path }) => {
     return path;
   }
 
-  console.log('Page', path, pageContext);
+  console.log('Page', path);
 
   /**
    * If using experiments, `DotLayoutComponent` is `withExperiments(DotcmsLayout)`.

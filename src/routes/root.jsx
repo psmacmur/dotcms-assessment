@@ -17,7 +17,7 @@ const Root = () => {
         // @ts-ignore
         navData?.entity?.children?.filter((child) => child) || [];
       setEntities(entities);
-      console.log('getPages', entities);
+      console.log('Root getPages', entities);
     };
     getPages();
   }, []);

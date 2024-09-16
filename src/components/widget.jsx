@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Flex, Heading, Text, View } from '@adobe/react-spectrum';
+import { Divider, Flex, Heading, Text, View } from '@adobe/react-spectrum';
 import { ImageComponent } from './image';
 import { Link, useLocation } from 'react-router-dom';
+import { useTitle } from '../hooks/useTitle';
 
 const Widget = (props) => {
   const { pathname } = useLocation();
+  useTitle(props.title);
 
   // console.log('Widget', pathname, JSON.stringify(props, null, 3));
 
@@ -17,7 +19,7 @@ const Widget = (props) => {
       alignContent="center"
       alignItems="center"
     >
-      <Heading>{props.title}</Heading>
+      <Divider />
       <Flex direction="row" gap="size-100" wrap justifyContent={'center'}>
         {props.widgetCodeJSON?.posts?.map((post) => {
           return (

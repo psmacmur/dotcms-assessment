@@ -3,7 +3,7 @@
 import React from 'react';
 
 const WebPageContent = ({ title, body }) => {
-  console.log('WebPageContent', title, body);
+  console.log('WebPageContent', title);
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: body }} />
