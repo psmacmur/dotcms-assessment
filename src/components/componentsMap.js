@@ -6,19 +6,19 @@ import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';
 
-
-// Mapping of components to DotCMS content types
+// Mapping of components to DotCMS content types, for Dotcmslayout
 const componentsMap = {
-    webPageContent: WebPageContent,
-    Banner: Banner,
-      Activity: Activity,
-      Product: Product,
-      Image: ImageComponent,
-    //   calendarEvent: CalendarEvent,
-    //   CallToAction: CallToAction,
-    //   CustomNoComponent: CustomNoComponent,
-    BlockEditorItem: BlogWithBlockEditor,
-    VtlInclude: Widget,
-  };
+  webPageContent: WebPageContent,
+  htmlpageasset: WebPageContent,
+  Banner: Banner,
+  Activity: Activity,
+  Product: Product,
+  Image: ImageComponent,
+  //   calendarEvent: CalendarEvent,
+  //   CallToAction: CallToAction,
+  //   CustomNoComponent: CustomNoComponent,
+  BlockEditorItem: BlogWithBlockEditor,
+  VtlInclude: Widget,
+};
 
-  export {componentsMap};
+export { componentsMap };

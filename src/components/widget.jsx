@@ -8,7 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Widget = (props) => {
   const { pathname } = useLocation();
 
-  console.log('Widget', pathname, props?.widgetCodeJSON?.posts);
+  // console.log('Widget', pathname, JSON.stringify(props, null, 3));
 
   return (
     <Flex
@@ -30,17 +30,18 @@ const Widget = (props) => {
             >
               {/* <Link href={`${pathname}/${post.urlTitle}`}> */}
               <Link to={`${pathname}/${post.urlTitle}`}>
-                <Flex direction="column">
+                <Flex direction="column" alignItems="center">
                   {post.image && (
                     <ImageComponent
                       fileAsset={post.image.shortyUrl}
                       title={post.image.meta?.title || post.image.name}
-                      description={post.image.description || post.image.file}
                       width="single-line-width"
                     />
                   )}
-                  <Heading>{post.title}</Heading>
-                  <Text>{post.teaser}</Text>
+                  <Heading alignSelf="center" margin={8}>
+                    {post.title}
+                  </Heading>
+                  <Text margin={8}>{post.teaser}</Text>
                 </Flex>
               </Link>
               {/* </Link> */}

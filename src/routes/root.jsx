@@ -11,10 +11,7 @@ const Root = () => {
   const [entities, setEntities] = useState([]);
   useEffect(() => {
     const getPages = async () => {
-      const navData = await client.nav.get({
-        depth: 3,
-        path: '/',
-      });
+      const navData = await client.nav.get({ depth: 3, path: '/' });
       const entities =
         // @ts-ignore
         navData?.entity?.children?.filter((child) => child) || [];
@@ -27,7 +24,7 @@ const Root = () => {
     return null;
   }
   return (
-    <Tabs aria-label="Top Nav" defaultSelectedKey="/blog">
+    <Tabs aria-label="Top Nav" defaultSelectedKey={'blog'}>
       <TabList>
         {entities?.map((child) => {
           // console.log('TabList child', JSON.stringify(child, null, 2));

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Page } from '../components/page';
+import { BlogPage } from '../components/blogpage';
 import { useLocation } from 'react-router-dom';
 import { splitUrlPath } from '../utils/url';
 
@@ -15,7 +15,7 @@ const ContentPage = () => {
       ? blogPath(segments[1])
       : pathname;
   console.log('ContentPage', pathname);
-  return <Page path={backendPath} />;
+  return <BlogPage path={backendPath} />;
 };
 
 export { ContentPage };

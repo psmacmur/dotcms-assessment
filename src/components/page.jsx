@@ -28,7 +28,7 @@ const Page = ({ path }) => {
     return path;
   }
 
-  // console.log('Page', path, pageContext);
+  console.log('Page', path, pageContext);
 
   /**
    * If using experiments, `DotLayoutComponent` is `withExperiments(DotcmsLayout)`.
@@ -50,7 +50,7 @@ const Page = ({ path }) => {
         pageAsset: pageContext,
         isInsideEditor: false,
       }}
-      config={{ pathname: path }}
+      config={{ pathname: path, editor: { params: { depth: '3' } } }}
     />
   );
 };
