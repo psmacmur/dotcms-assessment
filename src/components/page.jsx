@@ -17,6 +17,7 @@ const experimentConfig = {
 const Page = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);
   const getPage = async () => {
+    console.log('getPage', path);
     setPageContext(await client.page.get({ depth: 3, path: path }));
     //   console.log(navData);
   };
@@ -27,7 +28,7 @@ const Page = ({ path }) => {
     return path;
   }
 
-  console.log('Page', path, pageContext);
+  // console.log('Page', path, pageContext);
 
   /**
    * If using experiments, `DotLayoutComponent` is `withExperiments(DotcmsLayout)`.

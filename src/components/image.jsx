@@ -5,7 +5,7 @@ import { Image, View } from '@adobe/react-spectrum';
 import ImageLoader from '../utils/imageLoader';
 
 const ImageComponent = ({ fileAsset, title, description, width }) => {
-  console.log('ImageComponent', fileAsset, title, description);
+  // console.log('ImageComponent', fileAsset, title, description);
   return (
     <View>
       {fileAsset && (

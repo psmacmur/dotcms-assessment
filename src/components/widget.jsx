@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Flex, View } from '@adobe/react-spectrum';
+import { Flex, Heading, Text, View } from '@adobe/react-spectrum';
 import { ImageComponent } from './image';
+import { Link, useLocation } from 'react-router-dom';
 
 const Widget = (props) => {
-  console.log('Widget', props?.widgetCodeJSON?.posts);
+  const { pathname } = useLocation();
+
+  console.log('Widget', pathname, props?.widgetCodeJSON?.posts);
 
   return (
     <Flex
@@ -14,7 +17,7 @@ const Widget = (props) => {
       alignContent="center"
       alignItems="center"
     >
-      <h2>{props.title}</h2>
+      <Heading>{props.title}</Heading>
       <Flex direction="row" gap="size-100" wrap justifyContent={'center'}>
         {props.widgetCodeJSON?.posts?.map((post) => {
           return (
@@ -25,18 +28,22 @@ const Widget = (props) => {
               height="size-4000"
               overflow="hidden"
             >
-              <Flex direction="column">
-                <h4>{post.title}</h4>
-                {post.image && (
-                  <ImageComponent
-                    fileAsset={post.image.shortyUrl}
-                    title={post.image.meta?.title || post.image.name}
-                    description={post.image.description || post.image.file}
-                    width="single-line-width"
-                  />
-                )}
-                <span>{post.teaser}</span>
-              </Flex>
+              {/* <Link href={`${pathname}/${post.urlTitle}`}> */}
+              <Link to={`${pathname}/${post.urlTitle}`}>
+                <Flex direction="column">
+                  {post.image && (
+                    <ImageComponent
+                      fileAsset={post.image.shortyUrl}
+                      title={post.image.meta?.title || post.image.name}
+                      description={post.image.description || post.image.file}
+                      width="single-line-width"
+                    />
+                  )}
+                  <Heading>{post.title}</Heading>
+                  <Text>{post.teaser}</Text>
+                </Flex>
+              </Link>
+              {/* </Link> */}
             </View>
           );
         })}
