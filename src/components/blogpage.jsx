@@ -11,12 +11,15 @@ import { ParagraphComponent } from './paragraph';
 import { BulletListComponent, ListItemComponent } from './bulletlist';
 import { registerContentComponent } from './contentMap';
 import { ImageComponent } from './image';
+import { useTitle } from '../hooks/useTitle';
+import { TableComponent } from './table';
 
 registerContentComponent('heading', HeadingComponent);
 registerContentComponent('paragraph', ParagraphComponent);
 registerContentComponent('bulletList', BulletListComponent);
 registerContentComponent('listItem', ListItemComponent);
 registerContentComponent('dotImage', ImageComponent);
+registerContentComponent('table', TableComponent);
 
 const BlogPage = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);
@@ -31,6 +34,8 @@ const BlogPage = ({ path }) => {
   useEffect(() => {
     getPage();
   }, []);
+
+  useTitle(pageContext?.page?.title);
 
   console.log('BlogPage', path, pageContext);
 

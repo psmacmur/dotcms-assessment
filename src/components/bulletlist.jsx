@@ -3,7 +3,6 @@
 import React from 'react';
 import { Flex } from '@adobe/react-spectrum';
 import { BlogComponent } from './blogComponents';
-import { registerContentComponent } from './contentMap';
 
 // const alignments = { left: 'flex-start' };
 const BulletListComponent = (props) => {

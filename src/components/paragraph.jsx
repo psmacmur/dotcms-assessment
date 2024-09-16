@@ -2,7 +2,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Text, Flex } from '@adobe/react-spectrum';
-import { registerContentComponent } from './contentMap';
 
 const alignments = { left: 'flex-start' };
 const ParagraphComponent = (props) => {

@@ -5,6 +5,7 @@ import { DotcmsLayout } from '@dotcms/react';
 import { client } from '../utils/dotcmsClient';
 import { componentsMap } from './componentsMap';
 import { withExperiments } from '@dotcms/experiments';
+import { useTitle } from '../hooks/useTitle';
 
 const experimentConfig = {
   apiKey: null, // not working atm import.meta.env.VITE_PUBLIC_EXPERIMENTS_API_KEY, // API key for experiments, should be securely stored
@@ -24,6 +25,8 @@ const Page = ({ path }) => {
   useEffect(() => {
     getPage();
   }, []);
+  useTitle(pageContext?.page?.title);
+
   if (!pageContext) {
     return path;
   }
