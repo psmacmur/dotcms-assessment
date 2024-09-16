@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Text, Flex } from '@adobe/react-spectrum';
+import { Flex } from '@adobe/react-spectrum';
+import { BlogComponent } from './blogComponents';
+import { registerContentComponent } from './contentMap';
 
-const alignments = { left: 'flex-start' };
+// const alignments = { left: 'flex-start' };
 const BulletListComponent = (props) => {
   console.log('BulletListComponent', props);
   return (
@@ -11,17 +13,29 @@ const BulletListComponent = (props) => {
       direction="row"
       // justifyContent={alignments[props.attrs?.textAlign || 'flex-start']}
     >
+      <ul>
+        {props.content.map((c, i) => (
+          <li key={i}>
+            <BlogComponent contentItem={c} key={i} />
+          </li>
+        ))}
+      </ul>
+    </Flex>
+  );
+};
+
+const ListItemComponent = (props) => {
+  console.log('ListItemComponent', props);
+  return (
+    <Flex
+      direction="row"
+      // justifyContent={alignments[props.attrs?.textAlign || 'flex-start']}
+    >
       {props.content.map((c, i) => (
-        <Text
-          key={i}
-          alignSelf={alignments[props.attrs?.textAlign || 'flex-start']}
-          // UNSAFE_style={c.}
-        >
-          {c.text}&nbsp;
-        </Text>
+        <BlogComponent contentItem={c} key={i} />
       ))}
     </Flex>
   );
 };
 
-export { BulletListComponent };
+export { BulletListComponent, ListItemComponent };

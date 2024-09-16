@@ -1,18 +1,22 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { client } from '../utils/dotcmsClient';
-import { Content, View } from '@adobe/react-spectrum';
-import { contentMap } from './contentMap';
-/**
- * Component to render when there is no component for the content type.
- *
- * @param {{ readonly contentType: string }} { contentType }
- * @return {*}
- */
-const NoComponent = ({ contentType }) => {
-  return <div data-testid="no-component">No Component for {contentType}</div>;
-};
+import { Content } from '@adobe/react-spectrum';
+import { BlogComponent } from './blogComponents';
+
+// register dynamic blog components
+import { HeadingComponent } from './heading';
+import { ParagraphComponent } from './paragraph';
+import { BulletListComponent, ListItemComponent } from './bulletlist';
+import { registerContentComponent } from './contentMap';
+import { ImageComponent } from './image';
+
+registerContentComponent('heading', HeadingComponent);
+registerContentComponent('paragraph', ParagraphComponent);
+registerContentComponent('bulletList', BulletListComponent);
+registerContentComponent('listItem', ListItemComponent);
+registerContentComponent('dotImage', ImageComponent);
 
 const BlogPage = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);
@@ -34,15 +38,10 @@ const BlogPage = ({ path }) => {
    * DotcmsLayout doesn't seem to handle blog detail pages, so hand-roll one
    */
   return (
-    <Content>
+    <Content maxWidth={1024} margin={'auto'}>
       {pageContext?.urlContentMap?.blogContent?.content?.map(
         (contentItem, i) => {
-          const component = contentMap[contentItem.type];
-          console.log(contentItem.type);
-          if (component) {
-            return <View key={i}>{component(contentItem)}</View>;
-          }
-          return <NoComponent key={i} contentType={contentItem.type} />;
+          return <BlogComponent key={i} contentItem={contentItem} />;
         }
       )}
     </Content>

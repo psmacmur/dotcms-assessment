@@ -3,6 +3,7 @@
 import React from 'react';
 import { Image, View } from '@adobe/react-spectrum';
 import ImageLoader from '../utils/imageLoader';
+import { registerContentComponent } from './contentMap';
 
 const ImageComponent = (props) => {
   const { fileAsset, title, width, attrs } = props;
