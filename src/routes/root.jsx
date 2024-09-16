@@ -4,6 +4,7 @@ import { Item, TabList, TabPanels, Tabs } from '@adobe/react-spectrum';
 import { useEffect } from 'react';
 import { client } from '../utils/dotcmsClient';
 import { Outlet, useLocation } from 'react-router-dom';
+import { splitUrlPath } from '../utils/url';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -23,8 +24,10 @@ const Root = () => {
   if (!entities?.length) {
     return null;
   }
+  const segments = splitUrlPath(pathname);
+
   return (
-    <Tabs aria-label="Top Nav" defaultSelectedKey={'blog'}>
+    <Tabs aria-label="Top Nav" selectedKey={`/${segments[0]}`}>
       <TabList>
         {entities?.map((child) => {
           // console.log('TabList child', JSON.stringify(child, null, 2));

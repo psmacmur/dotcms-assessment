@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 const Home = () => {
   const { pathname } = useLocation();
   console.log('Home', pathname);
-  return <Page path="/blog" />;
+  return <Page path={pathname} />;
 };
 
 export { Home };
