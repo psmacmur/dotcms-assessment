@@ -12,7 +12,6 @@ import { defaultTheme, Provider } from '@adobe/react-spectrum';
 import { Root } from './routes/root';
 import { Home } from './routes/home';
 import { ContentPage } from './routes/content';
-import { base } from './utils/url';
 
 const App = () => {
   const navigate = useNavigate();
