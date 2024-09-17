@@ -1,7 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { useHref, useNavigate, Route, Routes } from 'react-router-dom';
+import {
+  useHref,
+  useLocation,
+  useNavigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import { defaultTheme, Provider } from '@adobe/react-spectrum';
 import { Root } from './routes/root';
 import { Home } from './routes/home';
@@ -9,6 +15,19 @@ import { ContentPage } from './routes/content';
 
 const App = () => {
   const navigate = useNavigate();
+
+  // Redirect to Home
+  const { pathname } = useLocation();
+  const [initialLoad, setInitialLoad] = useState(true);
+  useEffect(() => {
+    if (initialLoad) {
+      setInitialLoad(false);
+      if (pathname === '/') {
+        navigate('/index');
+      }
+    }
+  }, [pathname, initialLoad]);
+
   return (
     <Provider theme={defaultTheme} router={{ navigate, useHref }}>
       <Routes>

@@ -16,7 +16,7 @@ const ImageComponent = (props) => {
     src: path,
     width: width,
   });
-  console.log('ImageComponent', src, title);
+  // console.log('ImageComponent', src, title);
 
   return <View>{src && <Image src={src} alt={alt} width={width} />}</View>;
 };

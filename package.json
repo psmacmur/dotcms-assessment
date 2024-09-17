@@ -14,9 +14,12 @@
     "@apollo/client": "^3.11.8",
     "@dotcms/experiments": "^0.0.1-alpha.37",
     "@dotcms/react": "^0.0.1-alpha.37",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "graphql": "^16.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-lite-youtube-embed": "^2.4.0",
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {

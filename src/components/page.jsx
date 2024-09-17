@@ -6,6 +6,7 @@ import { client } from '../utils/dotcmsClient';
 import { componentsMap } from './componentsMap';
 import { withExperiments } from '@dotcms/experiments';
 import { useTitle } from '../hooks/useTitle';
+import { LoadingSpinner } from './loadingSpinner';
 
 const experimentConfig = {
   apiKey: null, // not working atm import.meta.env.VITE_PUBLIC_EXPERIMENTS_API_KEY, // API key for experiments, should be securely stored
@@ -28,10 +29,10 @@ const Page = ({ path }) => {
   useTitle(pageContext?.page?.title);
 
   if (!pageContext) {
-    return path;
+    return <LoadingSpinner />;
   }
 
-  console.log('Page', path);
+  console.log('Page', path, JSON.stringify(pageContext, null, 2));
 
   /**
    * If using experiments, `DotLayoutComponent` is `withExperiments(DotcmsLayout)`.

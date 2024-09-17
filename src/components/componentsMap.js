@@ -6,6 +6,7 @@ import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';
 import { Button } from './button';
+import { Video } from './video';
 
 // Mapping of components to DotCMS content types, for Dotcmslayout
 const componentsMap = {
@@ -20,6 +21,7 @@ const componentsMap = {
   //   CustomNoComponent: CustomNoComponent,
   BlockEditorItem: BlogWithBlockEditor,
   VtlInclude: Widget,
+  YouTube: Video,
 };
 
 export { componentsMap };

@@ -10,7 +10,7 @@ const Widget = (props) => {
   const { pathname } = useLocation();
   useTitle(props.title);
 
-  // console.log('Widget', pathname, JSON.stringify(props, null, 3));
+  console.log('Widget', pathname, props);
 
   return (
     <Flex
@@ -21,6 +21,10 @@ const Widget = (props) => {
     >
       <Divider />
       <Flex direction="row" gap="size-100" wrap justifyContent={'center'}>
+        {props.widgetTitle && !props.widgetCodeJSON?.posts && (
+          <Heading level={2}>{props.widgetTitle}</Heading>
+        )}
+
         {props.widgetCodeJSON?.posts?.map((post) => {
           return (
             <View

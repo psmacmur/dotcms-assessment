@@ -18,14 +18,20 @@ const Product = (props) => {
 
   return (
     <Link to={props.urlMap} aria-description={props.urlTitle}>
-      <Flex direction="column" alignItems="center">
+      <Flex
+        direction="column"
+        alignItems="center"
+        margin={12}
+        UNSAFE_style={{
+          border: '1px solid darkgray',
+        }}
+      >
         {props.image && (
           <ImageComponent
             fileAsset={props.image}
             title={
               props.imageMetaData?.title ?? props.titleImage ?? props.title
             }
-            width="single-line-width"
           />
         )}
         <Heading alignSelf="center" margin={8}>
@@ -33,12 +39,18 @@ const Product = (props) => {
         </Heading>
         <Text
           UNSAFE_style={{
-            textDecoration: props.salePrice ? 'strikethrough' : 'none',
+            textDecoration: props.salePrice ? 'line-through' : 'none',
           }}
         >
           {props.retailPrice && formatPrice(props.retailPrice)}
         </Text>
-        <Text>{props.salePrice && formatPrice(props.salePrice)}</Text>
+        <Text
+          UNSAFE_style={{
+            color: props.salePrice ? 'red' : 'white',
+          }}
+        >
+          {props.salePrice && formatPrice(props.salePrice)}
+        </Text>
       </Flex>
     </Link>
     // <div className="overflow-hidden bg-white rounded shadow-lg">
