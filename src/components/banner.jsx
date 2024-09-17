@@ -1,16 +1,22 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Image } from '@adobe/react-spectrum';
+import { Flex, Heading, View } from '@adobe/react-spectrum';
+import { Link } from 'react-router-dom';
+import { ImageComponent } from './image';
 
-const Banner = ({ title, caption, image, link, buttonText }) => {
-  console.log('Banner', title, caption, image, link, buttonText);
+const Banner = (props) => {
+  const { title, caption, image, link, buttonText } = props;
+  console.log('Banner', props);
   return (
-    <div>
-      {image && <Image src={image?.idPath ?? image} alt={title} />}
-      {title}
-      {caption}
-    </div>
+    <View>
+      {props.image && (
+        <ImageComponent fileAsset={props.image} title={props.titleImage} />
+      )}
+      <Heading alignSelf="center" margin={8}>
+        {props.title}
+      </Heading>
+    </View>
   );
 };
 

@@ -5,8 +5,8 @@ import { Flex, Heading, View } from '@adobe/react-spectrum';
 import { Link } from 'react-router-dom';
 import { ImageComponent } from './image';
 
-const Activity = (props) => {
-  console.log('Activity', props.title);
+const Button = (props) => {
+  console.log('Button', props.title);
   // const { pathname } = useLocation();
 
   return (
@@ -30,4 +30,4 @@ const Activity = (props) => {
   );
 };
 
-export { Activity };
+export { Button };

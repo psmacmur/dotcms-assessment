@@ -13,6 +13,7 @@ import { registerContentComponent } from './contentMap';
 import { ImageComponent } from './image';
 import { useTitle } from '../hooks/useTitle';
 import { TableComponent } from './table';
+import { ProductComponent } from './product';
 
 registerContentComponent('heading', HeadingComponent);
 registerContentComponent('paragraph', ParagraphComponent);
@@ -20,6 +21,7 @@ registerContentComponent('bulletList', BulletListComponent);
 registerContentComponent('listItem', ListItemComponent);
 registerContentComponent('dotImage', ImageComponent);
 registerContentComponent('table', TableComponent);
+registerContentComponent('dotContent', ProductComponent);
 
 const BlogPage = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);

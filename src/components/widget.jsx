@@ -30,7 +30,6 @@ const Widget = (props) => {
               height="size-4000"
               overflow="hidden"
             >
-              {/* <Link href={`${pathname}/${post.urlTitle}`}> */}
               <Link to={`${pathname}/${post.urlTitle}`}>
                 <Flex direction="column" alignItems="center">
                   {post.image && (
@@ -46,7 +45,6 @@ const Widget = (props) => {
                   <Text margin={8}>{post.teaser}</Text>
                 </Flex>
               </Link>
-              {/* </Link> */}
             </View>
           );
         })}

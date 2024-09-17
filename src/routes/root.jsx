@@ -16,7 +16,10 @@ const Root = () => {
       const entities =
         // @ts-ignore
         navData?.entity?.children?.filter((child) => child) || [];
-      setEntities(entities);
+      setEntities([
+        { href: '/index', title: 'Home', type: 'folder', order: -1 },
+        ...entities,
+      ]);
       console.log('Root getPages', entities);
     };
     getPages();

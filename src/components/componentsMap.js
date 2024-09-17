@@ -5,6 +5,7 @@ import { Widget } from './widget';
 import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';
+import { Button } from './button';
 
 // Mapping of components to DotCMS content types, for Dotcmslayout
 const componentsMap = {
@@ -15,7 +16,7 @@ const componentsMap = {
   Product: Product,
   Image: ImageComponent,
   //   calendarEvent: CalendarEvent,
-  //   CallToAction: CallToAction,
+  CallToAction: Button,
   //   CustomNoComponent: CustomNoComponent,
   BlockEditorItem: BlogWithBlockEditor,
   VtlInclude: Widget,
