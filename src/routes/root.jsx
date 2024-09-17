@@ -31,28 +31,36 @@ const Root = () => {
 
   return (
     <Tabs aria-label="Top Nav" selectedKey={`/${segments[0]}`} width="100%">
-      <TabList>
-        {entities?.map((child) => {
-          // console.log('TabList child', JSON.stringify(child, null, 2));
-          return (
-            <Item key={child.href} href={child.href}>
-              {child.title}
-            </Item>
-          );
-        })}
-      </TabList>
-      <TabPanels>
-        {entities?.map((child) => {
-          // console.log('TabPanels child', JSON.stringify(child, null, 2));
-          return (
-            <Item key={child.href}>
-              <View width="100%">
-                <Outlet context={`${child.href}`} />
-              </View>
-            </Item>
-          );
-        })}
-      </TabPanels>
+      <View
+        position="fixed"
+        top="0"
+        zIndex={1}
+        width="100%"
+        UNSAFE_style={{ backgroundColor: 'rgb(29,29,29)' }}
+      >
+        <TabList>
+          {entities?.map((child) => {
+            return (
+              <Item key={child.href} href={child.href}>
+                {child.title}
+              </Item>
+            );
+          })}
+        </TabList>
+      </View>
+      <View position="relative" top="48px" width="100%">
+        <TabPanels>
+          {entities?.map((child) => {
+            return (
+              <Item key={child.href}>
+                <View width="100%">
+                  <Outlet context={`${child.href}`} />
+                </View>
+              </Item>
+            );
+          })}
+        </TabPanels>
+      </View>
     </Tabs>
   );
 };
