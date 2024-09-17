@@ -6,7 +6,7 @@ import { Text, Flex } from '@adobe/react-spectrum';
 const alignments = { left: 'flex-start' };
 const ParagraphComponent = (props) => {
   const align = alignments[props.attrs?.textAlign || 'start'];
-  console.log('ParagraphComponent', props, align);
+  // console.log('ParagraphComponent', props, align);
 
   return props?.content ? (
     <Flex

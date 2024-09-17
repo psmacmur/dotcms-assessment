@@ -5,7 +5,7 @@ import { Heading, Flex } from '@adobe/react-spectrum';
 
 const alignments = { left: 'flex-start' };
 const HeadingComponent = (props) => {
-  console.log('HeadingComponent', props);
+  // console.log('HeadingComponent', props);
   return (
     <Flex
       direction="row"

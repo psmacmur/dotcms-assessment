@@ -6,7 +6,7 @@ import { BlogComponent } from './blogComponents';
 
 // const alignments = { left: 'flex-start' };
 const BulletListComponent = (props) => {
-  console.log('BulletListComponent', props);
+  // console.log('BulletListComponent', props);
   return (
     <Flex
       direction="row"
@@ -24,7 +24,7 @@ const BulletListComponent = (props) => {
 };
 
 const ListItemComponent = (props) => {
-  console.log('ListItemComponent', props);
+  // console.log('ListItemComponent', props);
   return (
     <Flex
       direction="row"

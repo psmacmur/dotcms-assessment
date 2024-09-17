@@ -12,7 +12,7 @@ const NoComponent = ({ contentType }) => {
 // Dynamic component that will select from registered blog components based on contentItem.type
 const BlogComponent = ({ contentItem, key }) => {
   const component = contentMap[contentItem.type];
-  console.log('BlogComponent', contentItem.type);
+  // console.log('BlogComponent', contentItem.type);
   if (component) {
     return <View key={key}>{component(contentItem)}</View>;
   }

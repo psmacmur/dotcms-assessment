@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Divider, Flex, Heading, Text, View } from '@adobe/react-spectrum';
-import { ImageComponent } from './image';
-import { Link, useLocation } from 'react-router-dom';
+import { Divider, Flex, Heading } from '@adobe/react-spectrum';
 import { useTitle } from '../hooks/useTitle';
+import { Post } from './post';
 
 const Widget = (props) => {
-  const { pathname } = useLocation();
   useTitle(props.title);
 
-  console.log('Widget', pathname, props);
+  // console.log('Widget', props);
 
   return (
     <Flex
@@ -26,34 +24,7 @@ const Widget = (props) => {
         )}
 
         {props.widgetCodeJSON?.posts?.map((post) => {
-          return (
-            <View
-              key={post.title}
-              backgroundColor="gray-200"
-              width="single-line-width"
-              height="size-4000"
-              overflow="hidden"
-              borderWidth="thin"
-              borderColor="dark"
-              borderRadius="small"
-            >
-              <Link to={`${pathname}/${post.urlTitle}`}>
-                <Flex direction="column" alignItems="center">
-                  {post.image && (
-                    <ImageComponent
-                      fileAsset={post.image.shortyUrl}
-                      title={post.image.meta?.title || post.image.name}
-                      width="single-line-width"
-                    />
-                  )}
-                  <Heading alignSelf="center" margin={8}>
-                    {post.title}
-                  </Heading>
-                  <Text margin={8}>{post.teaser}</Text>
-                </Flex>
-              </Link>
-            </View>
-          );
+          return <Post key={props.title} {...post} />;
         })}
       </Flex>
     </Flex>
