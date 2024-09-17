@@ -6,5 +6,6 @@ const splitUrlPath = (url) => {
   //   console.log(segments);
   return segments;
 };
+const base = '/dotcms-assessment'; // from vite.config.js, which isn't available at runtime
 
-export { splitUrlPath };
+export { base, splitUrlPath };

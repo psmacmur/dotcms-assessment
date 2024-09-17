@@ -12,12 +12,14 @@ import { defaultTheme, Provider } from '@adobe/react-spectrum';
 import { Root } from './routes/root';
 import { Home } from './routes/home';
 import { ContentPage } from './routes/content';
+import { base } from './utils/url';
 
 const App = () => {
   const navigate = useNavigate();
 
   // Redirect to Home
   const { pathname } = useLocation();
+  console.log(pathname);
   const [initialLoad, setInitialLoad] = useState(true);
   useEffect(() => {
     if (initialLoad) {
