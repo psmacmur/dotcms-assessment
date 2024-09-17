@@ -7,6 +7,7 @@ import { componentsMap } from './componentsMap';
 import { withExperiments } from '@dotcms/experiments';
 import { useTitle } from '../hooks/useTitle';
 import { LoadingSpinner } from './loadingSpinner';
+import { Flex, View } from '@adobe/react-spectrum';
 
 const experimentConfig = {
   apiKey: null, // not working atm import.meta.env.VITE_PUBLIC_EXPERIMENTS_API_KEY, // API key for experiments, should be securely stored
@@ -48,14 +49,18 @@ const Page = ({ path }) => {
 
   // @ts-ignore
   return (
-    <DotLayoutComponent
-      pageContext={{
-        components: componentsMap,
-        pageAsset: pageContext,
-        isInsideEditor: false,
-      }}
-      config={{ pathname: path, editor: { params: { depth: '3' } } }}
-    />
+    <Flex justifyContent="center">
+      <View>
+        <DotLayoutComponent
+          pageContext={{
+            components: componentsMap,
+            pageAsset: pageContext,
+            isInsideEditor: false,
+          }}
+          config={{ pathname: path, editor: { params: { depth: '3' } } }}
+        />
+      </View>
+    </Flex>
   );
 };
 

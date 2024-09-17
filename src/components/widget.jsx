@@ -33,6 +33,9 @@ const Widget = (props) => {
               width="single-line-width"
               height="size-4000"
               overflow="hidden"
+              borderWidth="thin"
+              borderColor="dark"
+              borderRadius="small"
             >
               <Link to={`${pathname}/${post.urlTitle}`}>
                 <Flex direction="column" alignItems="center">

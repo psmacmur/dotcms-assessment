@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { client } from '../utils/dotcmsClient';
-import { Content } from '@adobe/react-spectrum';
+import { Content, Divider, Flex, View } from '@adobe/react-spectrum';
 import { BlogComponent } from './blogComponents';
 
 // register dynamic blog components
@@ -13,7 +13,7 @@ import { registerContentComponent } from './contentMap';
 import { ImageComponent } from './image';
 import { useTitle } from '../hooks/useTitle';
 import { TableComponent } from './table';
-import { ProductComponent } from './product';
+import { ProductPromo } from './promo';
 
 registerContentComponent('heading', HeadingComponent);
 registerContentComponent('paragraph', ParagraphComponent);
@@ -21,7 +21,7 @@ registerContentComponent('bulletList', BulletListComponent);
 registerContentComponent('listItem', ListItemComponent);
 registerContentComponent('dotImage', ImageComponent);
 registerContentComponent('table', TableComponent);
-registerContentComponent('dotContent', ProductComponent);
+registerContentComponent('dotContent', ProductPromo);
 
 const BlogPage = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);
@@ -44,14 +44,20 @@ const BlogPage = ({ path }) => {
   /**
    * DotcmsLayout doesn't seem to handle blog detail pages, so hand-roll one
    */
+  const content = pageContext?.urlContentMap?.blogContent?.content || [];
+
   return (
-    <Content maxWidth={1024} margin={'auto'}>
-      {pageContext?.urlContentMap?.blogContent?.content?.map(
-        (contentItem, i) => {
-          return <BlogComponent key={i} contentItem={contentItem} />;
-        }
-      )}
-    </Content>
+    <Flex justifyContent="center">
+      <View padding="size-250">
+        <Content maxWidth="1024px">
+          <Flex direction="column">
+            {content.map((contentItem, i) => {
+              return <BlogComponent key={i} contentItem={contentItem} />;
+            })}
+          </Flex>
+        </Content>
+      </View>
+    </Flex>
   );
 };
 

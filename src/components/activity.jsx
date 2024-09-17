@@ -12,24 +12,31 @@ const Activity = (props) => {
 
   return (
     <Link to={props.urlMap} aria-description={props.urlTitle}>
-      <Flex direction="column" UNSAFE_className="card">
-        <Heading margin="0 auto">{props.title}</Heading>
-        <EmblaCarousel style={{ height: '300px' }}>
-          {props.image && (
-            <ImageComponent
-              fileAsset={props.image}
-              title={props.titleImage}
-              // width="single-line-width"
-            />
-          )}
-          <View UNSAFE_style={{ padding: '1em' }}>
-            <Text>{props.description}</Text>
-          </View>
-          {/* <View>
+      <View
+        borderWidth="thin"
+        borderColor="dark"
+        borderRadius="small"
+        margin="1em"
+      >
+        <Flex direction="column">
+          <Heading margin="8px auto">{props.title}</Heading>
+          <EmblaCarousel>
+            {props.image && (
+              <ImageComponent
+                fileAsset={props.image}
+                title={props.titleImage}
+                // width="single-line-width"
+              />
+            )}
+            <View UNSAFE_style={{ padding: '1em' }}>
+              <Text>{props.description}</Text>
+            </View>
+            {/* <View>
           <div dangerouslySetInnerHTML={{ __html: props.body }} />
         </View> */}
-        </EmblaCarousel>
-      </Flex>
+          </EmblaCarousel>
+        </Flex>
+      </View>
     </Link>
   );
 };

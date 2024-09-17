@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { Item, TabList, TabPanels, Tabs } from '@adobe/react-spectrum';
+import { Item, TabList, TabPanels, Tabs, View } from '@adobe/react-spectrum';
 import { useEffect } from 'react';
 import { client } from '../utils/dotcmsClient';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -30,7 +30,7 @@ const Root = () => {
   const segments = splitUrlPath(pathname);
 
   return (
-    <Tabs aria-label="Top Nav" selectedKey={`/${segments[0]}`}>
+    <Tabs aria-label="Top Nav" selectedKey={`/${segments[0]}`} width="100%">
       <TabList>
         {entities?.map((child) => {
           // console.log('TabList child', JSON.stringify(child, null, 2));
@@ -46,7 +46,9 @@ const Root = () => {
           // console.log('TabPanels child', JSON.stringify(child, null, 2));
           return (
             <Item key={child.href}>
-              <Outlet context={`${child.href}`} />
+              <View width="100%">
+                <Outlet context={`${child.href}`} />
+              </View>
             </Item>
           );
         })}
