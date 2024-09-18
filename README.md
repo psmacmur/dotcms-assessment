@@ -4,14 +4,28 @@
 
 This demo comprises a Vite React SPA consuming the [dotCMS Demo Site](https://demo.dotcms.com/dotAdmin/#/edit-page/content?url=%2Findex).
 
+### Author
+
+Peter MacMurchy
+
+- peter.macmurchy AT gmail
+- [https://github.com/psmacmur](https://github.com/psmacmur)
+
 ### Getting started
 
 1. Install [Node.js](https://nodejs.org/en) version 18+ or 20+, as required by Vite
 1. Clone the repo
 1. `npm install`
+1. Get an API token for the Admin User, using either:
+   - Postman to [https://demo.dotcms.com/api/v1/authentication/api-token](https://demo.dotcms.com/api/v1/authentication/api-token)
+   - The [dotCMS admin UI](https://demo.dotcms.com/dotAdmin/#/c/users)
+1. Copy the token into `.env.local`
+
+   - should contain one line: `VITE_PUBLIC_DOTCMS_AUTH_TOKEN=<token>`
+
 1. Run the demo locally: `npm run dev`
-1. Deploy statically to github pages: `npm run deploy`
-   - Site appears [here](https://psmacmur.github.io/dotcms-assessment)
+1. [Author only] Deploy statically to github pages: `npm run deploy`
+   - Site appears at [https://psmacmur.github.io/dotcms-assessment](https://psmacmur.github.io/dotcms-assessment)
 
 ### Features
 
