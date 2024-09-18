@@ -26,10 +26,7 @@ const BulletListComponent = (props) => {
 const ListItemComponent = (props) => {
   // console.log('ListItemComponent', props);
   return (
-    <Flex
-      direction="row"
-      // justifyContent={alignments[props.attrs?.textAlign || 'flex-start']}
-    >
+    <Flex direction="row">
       {props.content.map((c, i) => (
         <BlogComponent contentItem={c} key={i} />
       ))}

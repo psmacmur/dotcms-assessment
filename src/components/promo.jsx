@@ -39,7 +39,7 @@ const ProductPromo = (props) => {
       >
         <Flex direction="row" alignItems="center">
           {data.image && (
-            <View margin="8px">
+            <View margin="8px" flexBasis="content">
               <ImageComponent
                 fileAsset={src}
                 title={
@@ -48,7 +48,12 @@ const ProductPromo = (props) => {
               />
             </View>
           )}
-          <Flex direction="column" alignItems="center">
+          <Flex
+            direction="column"
+            alignItems="center"
+            flexBasis="auto"
+            flexGrow={1}
+          >
             <Heading alignSelf="center" margin={8}>
               {data.title}
             </Heading>
@@ -59,7 +64,7 @@ const ProductPromo = (props) => {
             </Content>
           </Flex>
 
-          <Flex direction="column" alignItems="center">
+          <Flex direction="column" alignItems="center" flexBasis="content">
             <Text
               UNSAFE_style={{
                 textDecoration: data.salePrice ? 'line-through' : 'none',
@@ -80,7 +85,7 @@ const ProductPromo = (props) => {
             <Button
               variant="cta"
               width={'single-line-width'}
-              margin={'auto'}
+              margin={'10px'}
               href="url"
               onPress={() => navigate(url, { replace: true })}
             >

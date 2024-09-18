@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import { ImageComponent } from './image';
 
 const Button = (props) => {
-  console.log('Button', props.title);
-  // const { pathname } = useLocation();
+  // console.log('Button', props.title);
 
   return (
     <Link to={props.urlMap} aria-description={props.urlTitle}>

@@ -5,7 +5,7 @@ import { Flex, Heading } from '@adobe/react-spectrum';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 const Video = (props) => {
-  console.log('Video', props);
+  // console.log('Video', props);
 
   return (
     <Flex direction="column">

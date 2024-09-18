@@ -2,7 +2,6 @@ import { Banner } from './banner';
 import { WebPageContent } from './webpagecontent';
 import { Product } from './product';
 import { Widget } from './widget';
-import { BlogWithBlockEditor } from './blog';
 import { ImageComponent } from './image';
 import { Activity } from './activity';
 import { Button } from './button';
@@ -21,7 +20,7 @@ const componentsMap = {
   //   calendarEvent: CalendarEvent,
   CallToAction: Button,
   //   CustomNoComponent: CustomNoComponent,
-  BlockEditorItem: BlogWithBlockEditor,
+  //   BlockEditorItem: BlogWithBlockEditor,
   VtlInclude: Widget,
   YouTube: Video,
 };

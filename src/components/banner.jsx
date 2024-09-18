@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { ImageComponent } from './image';
 
 const Banner = (props) => {
-  console.log('Banner', props);
+  // console.log('Banner', props);
   const navigate = useNavigate();
 
   return (

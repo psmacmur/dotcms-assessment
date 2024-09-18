@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import { ImageComponent } from './image';
 
 const Product = (props) => {
-  // const { image, title, salePrice, retailPrice, urlTitle } = props;
-  console.log('Product', props);
+  // console.log('Product', props);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
@@ -58,7 +57,4 @@ const Product = (props) => {
   );
 };
 
-// const ProductComponent = (props) => {
-//   return <Product {...(props.attrs?.data || props)} />;
-// };
 export { Product };

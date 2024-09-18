@@ -7,8 +7,7 @@ import { ImageComponent } from './image';
 import { EmblaCarousel } from './EmblaCarousel/EmblaCarousel';
 
 const Activity = (props) => {
-  console.log('Activity', props);
-  // const { pathname } = useLocation();
+  // console.log('Activity', props);
 
   return (
     <Link to={props.urlMap} aria-description={props.urlTitle}>
@@ -25,15 +24,15 @@ const Activity = (props) => {
               <ImageComponent
                 fileAsset={props.image}
                 title={props.titleImage}
-                // width="single-line-width"
               />
             )}
             <View UNSAFE_style={{ padding: '1em' }}>
               <Text>{props.description}</Text>
             </View>
-            {/* <View>
-          <div dangerouslySetInnerHTML={{ __html: props.body }} />
-        </View> */}
+            {/* TODO: move the following into a popup or child page 
+            <View>
+              <div dangerouslySetInnerHTML={{ __html: props.body }} />
+            </View> */}
           </EmblaCarousel>
         </Flex>
       </View>

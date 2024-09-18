@@ -2,12 +2,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Divider, Flex, Heading } from '@adobe/react-spectrum';
-import { useTitle } from '../hooks/useTitle';
 import { Post } from './post';
 
 const Widget = (props) => {
-  useTitle(props.title);
-
   // console.log('Widget', props);
 
   return (
