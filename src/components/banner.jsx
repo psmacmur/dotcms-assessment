@@ -45,15 +45,17 @@ const Banner = (props) => {
         <Heading level={2} alignSelf="center">
           {props.caption}
         </Heading>
-        <Button
-          variant="cta"
-          width={'single-line-width'}
-          margin={'auto'}
-          href="/store"
-          onPress={() => navigate('/store')}
-        >
-          {props.buttonText}
-        </Button>
+        {props.buttonText && (
+          <Button
+            variant="cta"
+            width={'single-line-width'}
+            margin={'auto'}
+            href="/store"
+            onPress={() => navigate('/store')}
+          >
+            {props.buttonText}
+          </Button>
+        )}
       </Flex>
     </View>
   );

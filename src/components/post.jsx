@@ -10,7 +10,7 @@ const Post = (props) => {
   const { pathname } = useLocation();
   useTitle(props.title);
 
-  console.log('Post', pathname, props);
+  // console.log('Post', pathname, props);
 
   return (
     <View

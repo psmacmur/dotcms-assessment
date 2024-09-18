@@ -24,7 +24,7 @@ const Widget = (props) => {
         )}
 
         {props.widgetCodeJSON?.posts?.map((post) => {
-          return <Post key={props.title} {...post} />;
+          return <Post key={post.title} {...post} />;
         })}
       </Flex>
     </Flex>

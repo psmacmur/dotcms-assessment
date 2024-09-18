@@ -6,7 +6,9 @@ import ImageLoader from '../utils/imageLoader';
 
 const ImageComponent = (props) => {
   const { fileAsset, title, width, attrs } = props;
-  const path = fileAsset?.idPath ?? fileAsset ?? attrs?.src;
+  // console.log('ImageComponent', fileAsset, attrs);
+  const path =
+    fileAsset?.idPath ?? fileAsset?.identifier ?? fileAsset ?? attrs?.src;
   const alt = title ?? attrs?.title;
 
   // if the path is from blogContent, it's something like

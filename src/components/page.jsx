@@ -20,7 +20,7 @@ const experimentConfig = {
 const Page = ({ path }) => {
   const [pageContext, setPageContext] = useState(undefined);
   const getPage = async () => {
-    console.log('getPage', path);
+    // console.log('Page getPage', path);
     setPageContext(await client.page.get({ depth: 3, path: path }));
     //   console.log(navData);
   };
@@ -33,7 +33,7 @@ const Page = ({ path }) => {
     return <LoadingSpinner />;
   }
 
-  console.log('Page', path, JSON.stringify(pageContext, null, 2));
+  // console.log('Page', path, JSON.stringify(pageContext, null, 2));
 
   /**
    * If using experiments, `DotLayoutComponent` is `withExperiments(DotcmsLayout)`.

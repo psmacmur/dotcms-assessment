@@ -47,7 +47,7 @@ const BlogPage = ({ path }) => {
 
   useTitle(pageContext?.page?.title);
 
-  console.log('BlogPage', path, pageContext);
+  // console.log('BlogPage 1', path, pageContext);
 
   // grab the card's image as the header image
   const headerImageUrl = window.sessionStorage.getItem('heroImage');
@@ -60,47 +60,46 @@ const BlogPage = ({ path }) => {
     pageContext?.urlContentMap?.title || pageContext?.page?.title || '';
 
   return (
-    <Flex justifyContent="center">
-      <View padding="size-250">
-        <Content maxWidth="1024px">
-          <Flex direction="column">
-            {title && (
-              <Heading level={2} alignSelf={'center'}>
-                {title}
-              </Heading>
-            )}
-            {headerImageUrl && (
-              <Content
-                maxHeight="size-5000"
-                marginBottom="size-100"
-                UNSAFE_style={{ overflow: 'hidden' }}
-              >
-                <ImageComponent
-                  fileAsset={headerImageUrl}
-                  title="Header image"
-                />
-              </Content>
-            )}
-            <TagGroup
-              UNSAFE_style={{
-                textTransform: 'uppercase',
-                transform: 'translate(30px,-20px) skewX(-10deg)',
-                fontWeight: 'bold',
-              }}
-            >
-              <Item>
-                <View backgroundColor="notice">
-                  &nbsp;{pageContext?.urlContentMap?.tags}&nbsp;
-                </View>
-              </Item>
-            </TagGroup>
-            {content.map((contentItem, i) => {
-              return <BlogComponent key={i} contentItem={contentItem} />;
-            })}
-          </Flex>
+    // <Flex justifyContent="center">
+    //   <View padding="size-250">
+    //     <Content maxWidth="1024px">
+    <Flex direction="column">
+      {title && (
+        <Heading level={2} alignSelf={'center'}>
+          {title}
+        </Heading>
+      )}
+      {headerImageUrl && (
+        <Content
+          maxHeight="size-5000"
+          marginBottom="size-100"
+          UNSAFE_style={{ overflow: 'hidden' }}
+        >
+          <ImageComponent fileAsset={headerImageUrl} title="Header image" />
         </Content>
-      </View>
+      )}
+      {pageContext?.urlContentMap?.tags?.length && (
+        <TagGroup
+          UNSAFE_style={{
+            textTransform: 'uppercase',
+            transform: 'translate(30px,-20px) skewX(-10deg)',
+            fontWeight: 'bold',
+          }}
+        >
+          <Item>
+            <View backgroundColor="notice">
+              &nbsp;{pageContext?.urlContentMap?.tags}&nbsp;
+            </View>
+          </Item>
+        </TagGroup>
+      )}
+      {content.map((contentItem, i) => {
+        return <BlogComponent key={i} contentItem={contentItem} />;
+      })}
     </Flex>
+    //     </Content>
+    //   </View>
+    // </Flex>
   );
 };
 
