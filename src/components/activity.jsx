@@ -4,7 +4,7 @@ import React from 'react';
 import { Heading, Flex, Text, View } from '@adobe/react-spectrum';
 import { Link } from 'react-router-dom';
 import { ImageComponent } from './image';
-import { EmblaCarousel } from './carousel';
+import { EmblaCarousel } from './EmblaCarousel/EmblaCarousel';
 
 const Activity = (props) => {
   console.log('Activity', props);

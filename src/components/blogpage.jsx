@@ -22,6 +22,7 @@ import { ImageComponent } from './image';
 import { useTitle } from '../hooks/useTitle';
 import { TableComponent } from './table';
 import { ProductPromo } from './promo';
+import { LoadingSpinner } from './loadingSpinner';
 
 registerContentComponent('heading', HeadingComponent);
 registerContentComponent('paragraph', ParagraphComponent);
@@ -42,11 +43,16 @@ const BlogPage = ({ path }) => {
   };
 
   useEffect(() => {
-    getPage();
+    if (!pageContext) {
+      getPage();
+    }
   }, []);
 
   useTitle(pageContext?.page?.title);
 
+  if (!pageContext) {
+    return <LoadingSpinner />;
+  }
   // console.log('BlogPage 1', path, pageContext);
 
   // grab the card's image as the header image
@@ -58,7 +64,7 @@ const BlogPage = ({ path }) => {
   const content = pageContext?.urlContentMap?.blogContent?.content || [];
   const title =
     pageContext?.urlContentMap?.title || pageContext?.page?.title || '';
-
+  const tags = pageContext?.urlContentMap?.tags?.split(',') || [];
   return (
     // <Flex justifyContent="center">
     //   <View padding="size-250">
@@ -78,7 +84,7 @@ const BlogPage = ({ path }) => {
           <ImageComponent fileAsset={headerImageUrl} title="Header image" />
         </Content>
       )}
-      {pageContext?.urlContentMap?.tags?.length && (
+      {tags.length && (
         <TagGroup
           UNSAFE_style={{
             textTransform: 'uppercase',
@@ -86,11 +92,11 @@ const BlogPage = ({ path }) => {
             fontWeight: 'bold',
           }}
         >
-          <Item>
-            <View backgroundColor="notice">
-              &nbsp;{pageContext?.urlContentMap?.tags}&nbsp;
-            </View>
-          </Item>
+          {tags.map((tag) => (
+            <Item key={tag}>
+              <View backgroundColor="notice">&nbsp;{tag}&nbsp;</View>
+            </Item>
+          ))}
         </TagGroup>
       )}
       {content.map((contentItem, i) => {

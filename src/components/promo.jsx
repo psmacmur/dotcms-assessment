@@ -13,11 +13,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ImageComponent } from './image';
 
 const ProductPromo = (props) => {
-  // const { image, title, salePrice, retailPrice, urlTitle } = props;
   const data = props.attrs?.data;
   const navigate = useNavigate();
 
-  console.log('ProductPromo', props);
+  // console.log('ProductPromo', props);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
@@ -26,7 +25,7 @@ const ProductPromo = (props) => {
     }).format(price);
   };
 
-  // transform to something like https://demo.dotcms.com/dA/adf567f9-f8a9-487e-b942-6bc083f677db/370w/20q/
+  // transform Image URL to something like https://demo.dotcms.com/dA/adf567f9-f8a9-487e-b942-6bc083f677db/370w/20q/
   const src = `${data.identifier}/370w/20q`;
   const url = `/store/${data.urlTitle}`;
 

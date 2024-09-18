@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { View } from '@adobe/react-spectrum';
-import { EmblaCarousel } from './carousel';
+import { EmblaCarousel } from './EmblaCarousel/EmblaCarousel';
 import { Banner } from './banner';
 
 const BannerCarousel = (props) => {
@@ -15,7 +15,10 @@ const BannerCarousel = (props) => {
       height={minHeight}
     >
       {props.banners?.length && (
-        <EmblaCarousel>
+        <EmblaCarousel
+          height={minHeight}
+          options={{ enableControls: true, showButtons: true }}
+        >
           {props.banners.map((banner, i) => {
             const bannerProps = {
               height: `${minHeight}px`,

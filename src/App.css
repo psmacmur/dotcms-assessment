@@ -18,6 +18,7 @@
  /* Carousel */
 .embla {
   overflow: hidden;
+  position: relative;
 }
 .embla__container {
   display: flex;
@@ -25,6 +26,20 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+.embla__controls {
+  position: absolute;
+  top: 296px;
+  left: 20px;
+}
+.embla__button {
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+
+} 
+.embla__button:hover {
+  opacity: 1;
 }
 
 h1 {

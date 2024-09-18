@@ -25,7 +25,9 @@ const Page = ({ path }) => {
     //   console.log(navData);
   };
   useEffect(() => {
-    getPage();
+    if (!pageContext) {
+      getPage();
+    }
   }, []);
   useTitle(pageContext?.page?.title);
 
